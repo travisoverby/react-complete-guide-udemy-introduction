@@ -4,25 +4,30 @@ import Person from './Person/Person';
 
 const app = props => {
   
-  const [ personsState, setPersonsState ] = useState({
-      persons: [
-        { name: 'Max', age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 26 }
-      ],
-      otherState: 'some other value'
-  });
-
-  const switchNameHandler = () => {
-    //personsState.persons[0].name = "Maximilian";
-    setPersonsState({
-      persons: [
-        { name: 'Maximilian', age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 27 }
-      ]
+    const [ personsState, setPersonsState ] = useState({
+        persons: [
+          { name: 'Max', age: 28 },
+          { name: 'Manu', age: 29 },
+          { name: 'Stephanie', age: 26 }
+        ]
     });
-  };
+
+    const [otherState, setOtherState] = useState('some other value');
+
+    console.log(personsState, otherState);
+
+    const switchNameHandler = () => {
+      //personsState.persons[0].name = "Maximilian";
+      setPersonsState({
+        persons: [
+          { name: 'Maximilian', age: 28 },
+          { name: 'Manu', age: 29 },
+          { name: 'Stephanie', age: 27 }
+        ],
+
+      });
+    };
+
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
