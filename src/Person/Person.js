@@ -3,15 +3,16 @@ import React from 'react';
 import classes from './Person.css';
 
 const person = (props) => {
-	const name = props.name;
-	const age = props.age;
-	const children = props.children;
-
+	const rnd = Math.random();
+	if (rnd > 0.7) {
+		throw new Error('Something went wrong');
+	}
+	
 	return (
 		<div className={classes.Person}>
-			<p onClick={props.click}>I'm {name} and I am <b>{age}</b> years old!</p>
-			<p>{children}</p>
-			<input type="text" onChange={props.changed} value={name}/>
+			<p onClick={props.click}>I'm {props.name} and I am <b>{props.age}</b> years old!</p>
+			<p>{props.children}</p>
+			<input type="text" onChange={props.changed} value={props.name}/>
 		</div>
 	);
 };
