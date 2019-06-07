@@ -21,6 +21,7 @@ class Person extends Component {
 		console.log('[Person.js] rendering...');
 		return (
 			<Aux>
+				{this.props.isAuth ? <p>Authenticated!</p> : <p>Please log in</p>}
 				<p key="i1"
 					onClick={this.props.click} >
 					I'm {this.props.name} and I am <b>{this.props.age}</b> years old!
@@ -30,7 +31,6 @@ class Person extends Component {
 				</p>
 				<input 
 					key="i3"
-					// ref={(inputEl) => {this.inputElement = inputEl}}
 					ref={this.inputElementRef}
 					type="text"
 					onChange={this.props.changed} 
